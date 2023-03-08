@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import svgr from "vite-plugin-svgr";
 import {resolve} from 'path'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 import dts from 'vite-plugin-dts'
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -34,8 +35,16 @@ export default defineConfig({
     svgr({
     svgrOptions: {
       icon: true,
-    },
-  }),
-  react()],
+      },
+    }),
+  react(),
+  viteStaticCopy({
+    targets: [
+      {
+        src: 'src/components/package.json',
+        dest: './'
+      }
+    ]
+  })],
 })
 
