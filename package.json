@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "build:lib": "vite build --config lib.config.ts",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
   },
   "dependencies": {
     "framer-motion": "^10.2.3",
@@ -31,6 +34,7 @@
     "vite-plugin-dts": "^2.0.2",
     "vite-plugin-static-copy": "^0.13.1",
     "vite-plugin-svgr": "^2.4.0",
+    "vitepress": "^1.0.0-alpha.51",
     "vue": "^3.2.47"
   }
 }
