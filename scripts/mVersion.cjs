@@ -18,7 +18,6 @@ exec('git show -s ', (error, stdout, stderr) => {
     }else{
       versionUpdate = version+`_${branchName+commit.substr(-5)}`
     }
-
     console.log(versionUpdate);
     packageObj.version = versionUpdate;
     const newPackageJson = JSON.stringify(packageObj, null, 2);
