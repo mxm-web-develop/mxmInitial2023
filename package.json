@@ -1,7 +1,7 @@
 {
   "name": "textract",
   "private": true,
-  "version": "0.2.0_dev9be49",
+  "version": "0.2.0_dev6f26f",
   "type": "module",
   "scripts": {
     "postinstall": "husky install",
