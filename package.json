@@ -4,17 +4,20 @@
   "version": "0.2.0_devde9a0",
   "type": "module",
   "scripts": {
+    "postinstall": "husky install",
     "dev": "vite",
     "build": "tsc && vite build",
     "build:lib": "vite build --config lib.config.ts",
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "test":"node ./scripts/test.cjs"
   },
   "husky": {
     "hooks": {
-      "pre-push": "node scripts/mVersion.cjs"
+      "pre-push": "node scripts/mVersion.cjs",
+      "pre-commit":"yarn test"
     }
   },
   "dependencies": {
