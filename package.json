@@ -10,12 +10,11 @@
     "preview": "vite preview",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs",
-    "pre-push": "node scripts/mVersion.cjs"
+    "docs:preview": "vitepress preview docs"
   },
   "husky": {
     "hooks": {
-      "pre-push": "npm run pre-push"
+      "pre-push": "node scripts/mVersion.cjs"
     }
   },
   "dependencies": {
