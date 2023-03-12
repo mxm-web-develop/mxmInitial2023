@@ -8,6 +8,7 @@ const { exec,execSync } = require('child_process');
 const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
 
 let versionUpdate;
+console.log('能不能用？');
 exec('git show -s ', (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
