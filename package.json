@@ -16,7 +16,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": "node scripts/mVersion.cjs",
+      "pre-push": ".husky/pre-push",
       "pre-commit":"yarn test"
     }
   },
