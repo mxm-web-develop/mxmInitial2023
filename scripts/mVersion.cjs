@@ -1,7 +1,8 @@
 const fs = require('fs');
-const packageJson = fs.readFileSync('../package.json');
+const {resolve} = require('path')
+const packageJson = fs.readFileSync(resolve(__dirname , '..','package.json'));
 const packageObj = JSON.parse(packageJson);
-const version = JSON.parse(fs.readFileSync('../package.json')).version
+const version = JSON.parse(fs.readFileSync(resolve(__dirname , '..','package.json'))).version
 const { exec,execSync } = require('child_process');
 // const commitMsg = execSync('git log --format=%B -n 1 HEAD').toString().trim();
 const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
@@ -21,5 +22,6 @@ exec('git show -s ', (error, stdout, stderr) => {
     console.log(versionUpdate);
     packageObj.version = versionUpdate;
     const newPackageJson = JSON.stringify(packageObj, null, 2);
-    fs.writeFileSync('../package.json', newPackageJson);
+    fs.writeFileSync(resolve(__dirname , '..','package.json'), newPackageJson);
 });
+
