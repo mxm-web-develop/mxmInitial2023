@@ -15,7 +15,8 @@
   },
   "husky": {
     "hooks": {
-      "pre-push": ".husky/pre-push"
+      "pre-push": ".husky/pre-push",
+      "post-merge":".husky/post-merge"
     }
   },
   "dependencies": {
