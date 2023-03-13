@@ -13,6 +13,9 @@ exec('git show -s ', (error, stdout, stderr) => {
       console.error(`exec error: ${error}`);
       return;
     }
+    if(branchName != 'dev'){
+      return
+    }
     const [commit] = stdout.trim().split('\n');
     if(version.includes('_')){
       versionUpdate = version.replace(/_(.*)/g, (match, p1) => `_${branchName+commit.substr(-5)}`);
