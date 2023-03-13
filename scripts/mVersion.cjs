@@ -8,7 +8,6 @@ const { exec,execSync } = require('child_process');
 const branchName = execSync('git rev-parse --abbrev-ref HEAD').toString().trim();
 
 let versionUpdate;
-console.log('能不能用？');
 exec('git show -s ', (error, stdout, stderr) => {
     if (error) {
       console.error(`exec error: ${error}`);
@@ -20,7 +19,6 @@ exec('git show -s ', (error, stdout, stderr) => {
     }else{
       versionUpdate = version+`_${branchName+commit.substr(-5)}`
     }
-    console.log(versionUpdate);
     packageObj.version = versionUpdate;
     const newPackageJson = JSON.stringify(packageObj, null, 2);
     fs.writeFileSync(resolve(__dirname , '..','package.json'), newPackageJson);
